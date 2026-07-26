@@ -20,8 +20,8 @@ def user_choice():
     try:
         n = int(input())
     except ValueError:
-            print("\nValue entered is not an integer.")
-            n = user_choice()
+        print("\nValue entered is not an integer.")
+        n = user_choice()
 
     # Checks if the player picked a valid option
     if n < 1 or n > 3:
