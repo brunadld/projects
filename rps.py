@@ -16,14 +16,14 @@ def user_choice():
     print("1. Rock", end="\n\t")
     print("2. Paper\n\t3. Scissors")
 
-    # Checks if the value is an integer
+    # Checks if the value is an integer; calls the function again if not
     try:
         n = int(input())
     except ValueError:
         print("\nValue entered is not an integer.")
         n = user_choice()
 
-    # Checks if the player picked a valid option
+    # Checks if the player picked a valid option; calls the function again if not
     if n < 1 or n > 3:
         print("\nInvalid option!", end=" ")
         n = user_choice()
