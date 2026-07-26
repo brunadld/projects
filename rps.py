@@ -20,8 +20,8 @@ def user_choice():
     try:
         n = int(input())
     except ValueError:
-                print("Value entered is not an integer.")
-                n = user_choice()
+            print("Value entered is not an integer.")
+            n = user_choice()
 
     # Checks if the player picked a valid option
     if n < 1 or n > 3:
@@ -79,7 +79,6 @@ while rounds < 3:
     # Loops the round while it's a tie
     while(tie(comp, user) == True):
         user = user_choice()
-
 
         # Prints the results
         print(f"\nROUND {rounds + 1}:")
