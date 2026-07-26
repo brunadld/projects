@@ -7,6 +7,7 @@ def computer_choice():
 def user_choice():
     """
     Gets the player's choice between rock (1), paper (2) and scissors (3).
+    Checks if it's a valid value.
 
     Returns:
         Integer inserted by the player.
@@ -15,7 +16,23 @@ def user_choice():
     print("1. Rock", end="\n\t")
     print("2. Paper\n\t3. Scissors")
 
-    return int(input())
+    # Checks if the value is an integer
+    try:
+        n = int(input())
+    except ValueError:
+                print("Value entered is not an integer.")
+                n = user_choice()
+
+    # Checks if the player picked a valid option
+    if n < 1 or n > 3:
+        while n < 1 or n > 3:
+            print("\nInvalid option!", end=" ")
+            n = user_choice()
+    
+            if n >= 1 and n <= 3:
+                break
+
+    return n
 
 def print_choice(x):
     """Converts the player's choice into a string to be printed."""
@@ -63,15 +80,6 @@ while rounds < 3:
     while(tie(comp, user) == True):
         user = user_choice()
 
-        # Checks if the player picked a valid option
-        if user < 1 or user > 3:
-            while user < 1 or user > 3:
-                print("Invalid option!", end=" ")
-                user = user_choice()
-
-                if user >= 1 and user <= 3:
-                    break
-            
 
         # Prints the results
         print(f"\nROUND {rounds + 1}:")
