@@ -25,12 +25,8 @@ def user_choice():
 
     # Checks if the player picked a valid option
     if n < 1 or n > 3:
-        while n < 1 or n > 3:
-            print("\nInvalid option!", end=" ")
-            n = user_choice()
-    
-            if n >= 1 and n <= 3:
-                break
+        print("\nInvalid option!", end=" ")
+        n = user_choice()
 
     return n
 
